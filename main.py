@@ -9,6 +9,11 @@ from Simulate_mdm.formatage_trame import (
     compute_status, calculate_checksum,
     get_status_temp, get_status_wss, get_status_gps
 )
+from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
+
+
+
+
 
 def build_trame(horloge, meteo, storage):
     frame = "W2X,  "
@@ -24,23 +29,35 @@ def build_trame(horloge, meteo, storage):
     return f"{frame}*{calculate_checksum(frame)}"
 
 
+def input_number(name, key, default):
+    if key not in st.session_state:
+        st.session_state[key] = default
+    return st.number_input(name, value=st.session_state[key], key=key)
+
+def input_text(name, key, default):
+    if key not in st.session_state:
+        st.session_state[key] = default
+    return st.text_input(name, value=st.session_state[key], key=key)
+
 def saisie_manuelle():
     col1, col2 = st.columns(2)
     with col1:
-        year = st.number_input("L'année", value=datetime.now().year)
-        month = st.number_input("Le mois", value=datetime.now().month)
-        day = st.number_input("Le jour", value=datetime.now().day)
-        windSpeed = st.number_input("Vitesse du vent", value=12.3)
-        temperature = st.number_input("Température", value=23.7)
-        pressure = st.number_input("Pression (mbar)", value=1013.25)
-        battery = st.number_input("Batterie (V)", value=11.9)
+        year = input_number("L'année", "year", datetime.now().year)
+        month = input_number("Le mois", "month", datetime.now().month)
+        day = input_number("Le jour", "day", datetime.now().day)
+        windSpeed = input_number("Vitesse du vent", "windSpeed", 12.3)
+        temperature = input_number("Température", "temperature", 23.7)
+        pressure = input_number("Pression (mbar)", "pressure", 1013.25)
+        battery = input_number("Batterie (V)", "battery", 11.9)
+
     with col2:
-        hour = st.number_input("L'heure", value=datetime.now().hour)
-        minute = st.number_input("La minute", value=datetime.now().minute)
-        second = st.number_input("La seconde", value=datetime.now().second)
-        windDir = st.number_input("Direction du vent", value=80)
-        humidity = st.number_input("Humidité (%)", value=41)
-        statusLog = st.text_input("Code statut log", value="0")
+        hour = input_number("L'heure", "hour", datetime.now().hour)
+        minute = input_number("La minute", "minute", datetime.now().minute)
+        second = input_number("La seconde", "second", datetime.now().second)
+        windDir = input_number("Direction du vent", "windDir", 80)
+        humidity = input_number("Humidité (%)", "humidity", 41)
+        statusLog = input_text("Code statut log", "statusLog", "0")
+
 
     horloge = {
         'year': year, 'month': month, 'day': day,
@@ -89,7 +106,18 @@ def valider_trames_w2x(lines):
     Retourne les trames valides et les erreurs.
     """
     w2x_pattern = re.compile(
-        r"^W2X,\s{2}\d{6},\s\d{2}:\d{2}:\d{2},\s\d{3}\.\d,\s\d{3},\s[+-]\d{4}\.\d,\s\d{3},\s\d{2}\.\d{2},\s\d{3}\.\d,\s[+-]\d{4}\.\d,\s[A-Z0-9]{4},\s?\*\d+$"
+        r"^W2X,\s{2}"  # W2X, avec 2 espaces
+        r"\d{6},\s"  # Date YYMMDD
+        r"\d{2}:\d{2}:\d{2},\s"  # Heure HH:MM:SS
+        r"\d{3}\.\d,\s"  # Vitesse vent 001.8
+        r"\d{3},\s"  # Direction 080
+        r"[+-]\d{3}\.\d,\s"  # Température +023.7
+        r"\d{3},\s"  # Humidité 041
+        r"\d{3}\.\d{2},\s"  # Pression 028.61
+        r"\d{2}\.\d,\s"  # Batterie 11.9
+        r"[+-]\d{3}\.\d,\s"  # Temp. aspirée +023.6
+        r"[A-Z0-9]{4},\s?"  # Statuts A010,
+        r"\*\d+$"  # Checksum *3347
     )
 
     trames_valides = []
@@ -114,8 +142,9 @@ def charger_ou_coller_trames():
             lignes = [line.decode('utf-8').strip() for line in uploaded_txt.readlines() if line.strip()]
     else:
         texte = st.text_area("Collez ici une ou plusieurs trames W2X (une par ligne)", height=200)
-        if texte:
+        if st.button("Charger le fichier texte") and texte :
             lignes = [line.strip() for line in texte.split("\n") if line.strip()]
+
 
     if lignes:
         trames_valides, erreurs = valider_trames_w2x(lignes)
@@ -123,7 +152,7 @@ def charger_ou_coller_trames():
         if erreurs:
             st.error("Trames mal formatées :")
             for ligne, contenu in erreurs:
-                st.code(f"Ligne {ligne} : {contenu}")
+                st.error(f"Ligne {ligne} : {contenu}")
             return []
 
         st.success(f"{len(trames_valides)} trames valides chargées.")
@@ -148,18 +177,42 @@ def GUI():
         trames = charger_csv()
 
     elif option == "Charger un fichier TXT avec trames":
-        st.subheader("Importer un fichier texte contenant des trames W2X")
+        st.subheader("Importer/coller un fichier texte contenant des trames W2X")
         trames = charger_ou_coller_trames()
 
     if trames:
-        st.subheader("Trames générées ou chargées")
-        df = pd.DataFrame({"Index": list(range(len(trames))), "Trame": trames})
-        st.dataframe(df, use_container_width=True)
+        st.session_state.trames = trames
 
-        index = st.number_input("Choisir une trame à visualiser :", min_value=0, max_value=len(trames)-1, step=1)
-        if st.button("Visualiser la trame sélectionnée"):
-            st.session_state.selected_trame = trames[index]
+    if st.session_state.trames:
+        st.subheader("Trames générées ou chargées")
+
+        df = pd.DataFrame({
+            "Index": list(range(len(st.session_state.trames))),
+            "Trame": st.session_state.trames
+        })
+
+        gb = GridOptionsBuilder.from_dataframe(df)
+        gb.configure_selection("single")  # une seule ligne sélectionnable
+        grid_options = gb.build()
+
+        grid_response = AgGrid(
+            df,
+            gridOptions=grid_options,
+            update_mode=GridUpdateMode.SELECTION_CHANGED,
+            theme="streamlit",
+            height=300
+        )
+
+        selected_rows = grid_response['selected_rows']
+
+        print(selected_rows)
+
+        if selected_rows is not None and len(selected_rows) > 0:
+            selected_trame = selected_rows.iloc[0]['Trame']
+            st.session_state.selected_trame = selected_trame
             st.switch_page("pages/frameinfo.py")
+
+
 
 # Appel principal
 GUI()
