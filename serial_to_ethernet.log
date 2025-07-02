@@ -1,0 +1,122 @@
+2025-06-09 14:22:08,055 - ERROR - Serial error: could not open port 'COM3': FileNotFoundError(2, 'Le fichier spécifié est introuvable.', None, 2)
+2025-06-09 14:22:08,056 - INFO - Bridge started. Press Ctrl+C to stop.
+2025-06-09 14:22:11,585 - ERROR - Serial error: could not open port 'COM3': FileNotFoundError(2, 'Le fichier spécifié est introuvable.', None, 2)
+2025-06-09 14:22:11,585 - INFO - Bridge started. Press Ctrl+C to stop.
+2025-06-09 14:22:32,596 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:22:32,598 - INFO - Socket connection closed
+2025-06-09 14:22:41,664 - INFO - Bridge started. Press Ctrl+C to stop.
+2025-06-09 14:22:41,676 - INFO - Connected to serial port COM5
+2025-06-09 14:23:02,702 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:23:02,703 - INFO - Socket connection closed
+2025-06-09 14:23:28,727 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:23:28,727 - INFO - Socket connection closed
+2025-06-09 14:23:54,757 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:23:54,758 - INFO - Socket connection closed
+2025-06-09 14:24:20,819 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:24:20,819 - INFO - Socket connection closed
+2025-06-09 14:24:46,876 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:24:46,877 - INFO - Socket connection closed
+2025-06-09 14:25:12,922 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:25:12,923 - INFO - Socket connection closed
+2025-06-09 14:25:38,947 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:25:38,948 - INFO - Socket connection closed
+2025-06-09 14:26:04,983 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:26:04,984 - INFO - Socket connection closed
+2025-06-09 14:26:31,028 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:26:31,029 - INFO - Socket connection closed
+2025-06-09 14:26:57,084 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:26:57,084 - INFO - Socket connection closed
+2025-06-09 14:27:23,117 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:27:23,118 - INFO - Socket connection closed
+2025-06-09 14:27:49,160 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:27:49,161 - INFO - Socket connection closed
+2025-06-09 14:28:15,203 - ERROR - Unexpected error in ethernet thread: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+2025-06-09 14:28:15,204 - INFO - Socket connection closed
+2025-06-09 14:28:19,455 - INFO - Serial connection closed
+2025-06-09 14:28:19,455 - INFO - Bridge stopped
+2025-06-09 14:28:21,280 - INFO - Bridge started. Press Ctrl+C to stop.
+2025-06-09 14:28:21,290 - INFO - Connected to serial port COM5
+2025-06-09 14:28:23,575 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:28:23,575 - INFO - Socket connection closed
+2025-06-09 14:28:30,851 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:28:30,852 - INFO - Socket connection closed
+2025-06-09 14:28:38,131 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:28:38,132 - INFO - Socket connection closed
+2025-06-09 14:28:45,413 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:28:45,413 - INFO - Socket connection closed
+2025-06-09 14:28:52,701 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:28:52,702 - INFO - Socket connection closed
+2025-06-09 14:28:59,988 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:28:59,989 - INFO - Socket connection closed
+2025-06-09 14:29:07,261 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:29:07,261 - INFO - Socket connection closed
+2025-06-09 14:29:14,541 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:29:14,542 - INFO - Socket connection closed
+2025-06-09 14:29:21,826 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:29:21,826 - INFO - Socket connection closed
+2025-06-09 14:29:29,113 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:29:29,113 - INFO - Socket connection closed
+2025-06-09 14:29:36,381 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:29:36,382 - INFO - Socket connection closed
+2025-06-09 14:29:43,661 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:29:43,661 - INFO - Socket connection closed
+2025-06-09 14:29:50,944 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:29:50,945 - INFO - Socket connection closed
+2025-06-09 14:29:58,232 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:29:58,233 - INFO - Socket connection closed
+2025-06-09 14:30:05,502 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:30:05,503 - INFO - Socket connection closed
+2025-06-09 14:30:12,783 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:30:12,784 - INFO - Socket connection closed
+2025-06-09 14:30:20,059 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:30:20,059 - INFO - Socket connection closed
+2025-06-09 14:30:27,329 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:30:27,330 - INFO - Socket connection closed
+2025-06-09 14:30:34,608 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:30:34,609 - INFO - Socket connection closed
+2025-06-09 14:30:41,886 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:30:41,887 - INFO - Socket connection closed
+2025-06-09 14:30:49,152 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:30:49,152 - INFO - Socket connection closed
+2025-06-09 14:30:56,428 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:30:56,429 - INFO - Socket connection closed
+2025-06-09 14:31:03,719 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:31:03,720 - INFO - Socket connection closed
+2025-06-09 14:31:10,984 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:31:10,985 - INFO - Socket connection closed
+2025-06-09 14:31:18,252 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:31:18,253 - INFO - Socket connection closed
+2025-06-09 14:31:25,532 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:31:25,533 - INFO - Socket connection closed
+2025-06-09 14:31:32,792 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:31:32,793 - INFO - Socket connection closed
+2025-06-09 14:31:40,070 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:31:40,070 - INFO - Socket connection closed
+2025-06-09 14:31:47,351 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:31:47,351 - INFO - Socket connection closed
+2025-06-09 14:31:54,620 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:31:54,621 - INFO - Socket connection closed
+2025-06-09 14:32:01,909 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:32:01,910 - INFO - Socket connection closed
+2025-06-09 14:32:09,190 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:32:09,190 - INFO - Socket connection closed
+2025-06-09 14:32:16,473 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:32:16,474 - INFO - Socket connection closed
+2025-06-09 14:32:23,763 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:32:23,764 - INFO - Socket connection closed
+2025-06-09 14:32:31,058 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:32:31,058 - INFO - Socket connection closed
+2025-06-09 14:32:38,347 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:32:38,348 - INFO - Socket connection closed
+2025-06-09 14:32:45,613 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:32:45,613 - INFO - Socket connection closed
+2025-06-09 14:32:52,890 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:32:52,891 - INFO - Socket connection closed
+2025-06-09 14:33:00,180 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:33:00,181 - INFO - Socket connection closed
+2025-06-09 14:33:07,472 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:33:07,473 - INFO - Socket connection closed
+2025-06-09 14:33:14,737 - ERROR - Unexpected error in ethernet thread: [Errno 11001] getaddrinfo failed
+2025-06-09 14:33:14,738 - INFO - Socket connection closed
+2025-06-09 14:33:16,921 - INFO - Serial connection closed
+2025-06-09 14:33:16,922 - INFO - Bridge stopped

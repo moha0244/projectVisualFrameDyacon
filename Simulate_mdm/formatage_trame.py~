@@ -1,0 +1,43 @@
+
+def round_value(value, width, decimals=0):
+    if isinstance(value, float):
+        value = abs(value)
+        formatted = f"{value:.{decimals}f}"
+    else:
+        formatted = str(value)
+    return formatted.zfill(width + (1 if decimals > 0 else 0))
+
+
+def format_date(year, month, day):
+    return f"{year % 100}{round_value(month, 2)}{round_value(day, 2)}"
+
+def format_time(hour, minute, second):
+    return f"{round_value(hour, 2)}:{round_value(minute, 2)}:{round_value(second, 2)}"
+
+def format_wind(wind_speed, wind_dir):
+    return f"{round_value(wind_speed, 4, 1)}, {round_value(wind_dir, 3)}"
+
+def format_temperature(temp):
+    sign = "+" if temp >= 0 else "-"
+    return f"{sign}{round_value(abs(temp), 4, 1)}"
+
+def format_humidity(humidity):
+    return round_value(humidity, 3)
+
+def conversion_pressure(pressure_mbar):
+    return 0.02953 * pressure_mbar
+
+def format_pressure(pressure):
+    return round_value(conversion_pressure(pressure), 5, 2)
+
+def format_battery(battery):
+    return round_value(battery, 3, 1)
+
+def compute_status(temp_code='A', wss_code='0', gps_code='1', log_code='0'):
+    return f"{temp_code}{wss_code}{gps_code}{log_code}"
+
+def calculate_checksum(frame):
+    #for c in frame[0:76]:
+     #   print("normal" + (c))
+      #  print((ord(c)))
+    return str(sum(ord(c) for c in frame[6:77]))
