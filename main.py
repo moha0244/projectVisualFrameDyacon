@@ -1,4 +1,7 @@
 import re
+import sys
+sys.path.append("Simulate_mdm")
+sys.path.append("pages")
 
 import streamlit as st
 import pandas as pd
