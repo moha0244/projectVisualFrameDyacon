@@ -187,7 +187,7 @@ def GUI():
         st.subheader("Trames générées ou chargées")
 
         df = pd.DataFrame({
-            "Index": list(range(len(st.session_state.trames))),
+            "Index": list(range(1, len(st.session_state.trames)+1)),
             "Trame": st.session_state.trames
         })
 
@@ -200,7 +200,7 @@ def GUI():
             gridOptions=grid_options,
             update_mode=GridUpdateMode.SELECTION_CHANGED,
             theme="streamlit",
-            height=300
+            height= 500
         )
 
         selected_rows = grid_response['selected_rows']
