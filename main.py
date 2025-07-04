@@ -39,7 +39,7 @@ def input_text(name, key, default):
         st.session_state[key] = default
     return st.text_input(name, value=st.session_state[key], key=key)
 
-def saisie_manuelle():
+def manual_entry():
     col1, col2 = st.columns(2)
     with col1:
         year = input_number("L'année", "year", datetime.now().year)
@@ -75,7 +75,7 @@ def saisie_manuelle():
 
     return [build_trame(horloge, meteo, storage)]
 
-def charger_csv():
+def load_csv():
     trames = []
     uploaded_csv = st.file_uploader("Importer un CSV", type=["csv"])
     if uploaded_csv:
@@ -100,10 +100,10 @@ def charger_csv():
     return trames
 
 
-def valider_trames_w2x(lines):
+def validate_trames_w2x(lines):
     """
     Valide les trames en utilisant une expression régulière stricte.
-    Retourne les trames valides et les erreurs.
+    Retourne les trames valides et les errors.
     """
     w2x_pattern = re.compile(
         r"^W2X,\s{2}"  # W2X, avec 2 espaces
@@ -120,43 +120,43 @@ def valider_trames_w2x(lines):
         r"\*\d+$"  # Checksum *3347
     )
 
-    trames_valides = []
-    erreurs = []
+    trames_valid = []
+    errors = []
 
     for i, line in enumerate(lines):
         if w2x_pattern.match(line):
-            trames_valides.append(line)
+            trames_valid.append(line)
         else:
-            erreurs.append((i + 1, line))
+            errors.append((i + 1, line))
 
-    return trames_valides, erreurs
+    return trames_valid, errors
 
-def charger_ou_coller_trames():
+def load_or_strick_trame():
     mode = st.radio("Méthode d'entrée :", ["Charger un fichier .txt", "Coller manuellement les trames"])
 
-    lignes = []
+    lines = []
 
     if mode == "Charger un fichier .txt":
         uploaded_txt = st.file_uploader("Importer un fichier texte", type=["txt"])
         if uploaded_txt:
-            lignes = [line.decode('utf-8').strip() for line in uploaded_txt.readlines() if line.strip()]
+            lines = [line.decode('utf-8').strip() for line in uploaded_txt.readlines() if line.strip()]
     else:
         texte = st.text_area("Collez ici une ou plusieurs trames W2X (une par ligne)", height=200)
         if st.button("Charger le fichier texte") and texte :
-            lignes = [line.strip() for line in texte.split("\n") if line.strip()]
+            lines = [line.strip() for line in texte.split("\n") if line.strip()]
 
 
-    if lignes:
-        trames_valides, erreurs = valider_trames_w2x(lignes)
+    if lines:
+        trames_valid, errors = validate_trames_w2x(lines)
 
-        if erreurs:
+        if errors:
             st.error("Trames mal formatées :")
-            for ligne, contenu in erreurs:
-                st.error(f"Ligne {ligne} : {contenu}")
+            for line, content in errors:
+                st.error(f"line {line} : {content}")
             return []
 
-        st.success(f"{len(trames_valides)} trames valides chargées.")
-        return trames_valides
+        st.success(f"{len(trames_valid)} trames valides chargées.")
+        return trames_valid
 
     return []
 
@@ -170,15 +170,15 @@ def GUI():
 
     if option == "Saisie manuelle":
         st.subheader("Entrée manuelle des données")
-        trames = saisie_manuelle()
+        trames = manual_entry()
 
     elif option == "Charger un fichier CSV":
         st.subheader("Charger un fichier CSV contenant les colonnes météo")
-        trames = charger_csv()
+        trames = load_csv()
 
     elif option == "Charger un fichier TXT avec trames":
         st.subheader("Importer/coller un fichier texte contenant des trames W2X")
-        trames = charger_ou_coller_trames()
+        trames = load_or_strick_trame()
 
     if trames:
         st.session_state.trames = trames

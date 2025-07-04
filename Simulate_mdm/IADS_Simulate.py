@@ -1,14 +1,14 @@
 def encode_w2x_map(trame):
     w2x_map = {}
-    adresse_num = 1
+    adress_num = 1
     for i in range(6, len(trame), 2):
         pair = trame[i:i+2]
         if all(c in [' ', ',', "*"] for c in pair):
             continue
-        adresse = f"W2X{adresse_num:02d}"
-        valeur_hexa = ''.join(f"{ord(c):02X}" for c in pair)
-        w2x_map[adresse] = valeur_hexa
-        adresse_num += 1
+        adress = f"W2X{adress_num:02d}"
+        value_hexa = ''.join(f"{ord(c):02X}" for c in pair)
+        w2x_map[adress] = value_hexa
+        adress_num += 1
     return w2x_map
 
 def parse_hex(w2x_hex):
