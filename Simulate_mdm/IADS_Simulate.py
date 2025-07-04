@@ -65,7 +65,7 @@ def decode_pressure(w2x):
 
 def get_checksum_sum_part1(w2x):
     return (
-        681
+        1061
         + sum(parse_hex(w2x[f'W2X{i:02d}'])[0] + parse_hex(w2x[f'W2X{i:02d}'])[1] for i in range(1, 10))
         + parse_hex(w2x['W2X10'])[0] + parse_hex(w2x['W2X11'])[1]
         + sum(parse_hex(w2x[f'W2X{i:02d}'])[0] + parse_hex(w2x[f'W2X{i:02d}'])[1] for i in range(12, 16))
