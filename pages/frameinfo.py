@@ -1,5 +1,4 @@
 import streamlit as st
-
 from  Simulate_mdm.IADS_Simulate import encode_w2x_map, decode_w2x_fields
 
 
@@ -18,7 +17,7 @@ def build_encoding_table(trame):
     st.subheader("Table d'encodage")
     w2x_map = encode_w2x_map(trame)
     table = []
-    adresse_num = 1
+    adress_num = 1
     i = 6  # Index de départ dans la trame
 
     while i < len(trame):
@@ -28,16 +27,16 @@ def build_encoding_table(trame):
         if all(c in [' ', ',', '*'] for c in pair):
             i += 2
             continue
-        adresse = f"W2X{adresse_num:02d}"
+        adress = f"W2X{adress_num:02d}"
         pos_str = f"{i + 1}-{i + 2}"
         table.append({
-            "Adresse": adresse,
+            "Adresse": adress,
             "Position (dans trame)": pos_str,
             "Caractères": pair,
-            "valeur encodé": w2x_map.get(adresse),
+            "valeur encodé": w2x_map.get(adress),
         })
         i += 2
-        adresse_num += 1
+        adress_num += 1
 
 
     st.dataframe(table, use_container_width=True)
